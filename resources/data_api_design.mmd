@@ -1,0 +1,32 @@
+classDiagram
+    class Wallet{
+        +str public_key
+        +str private_key
+        +__init__(self)
+        +generate_keys(self)
+        +save_keys(self)
+        +load_keys(self)
+    }
+    class Transaction{
+        +str sender
+        +str recipient
+        +int amount
+        +__init__(self, sender, recipient, amount)
+        +to_dict(self)
+    }
+    class Blockchain{
+        +list transactions
+        +int difficulty
+        +__init__(self)
+        +add_transaction(self, transaction)
+        +mine_block(self)
+    }
+    class Database{
+        +str db_file
+        +__init__(self, db_file)
+        +create_tables(self)
+        +insert_wallet(self, wallet)
+        +get_wallet(self, public_key)
+    }
+    Wallet "1" -- "1" Database: uses
+    Transaction "1" -- "1" Blockchain: uses

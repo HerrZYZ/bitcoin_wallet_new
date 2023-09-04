@@ -1,0 +1,4 @@
+flask==1.1.2
+bcrypt==3.2.0
+bitcoinlib==0.4.14
+sqlite3==2.6.0

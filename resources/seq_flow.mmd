@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant M as Main
+    participant W as Wallet
+    participant T as Transaction
+    participant B as Blockchain
+    participant D as Database
+    M->>W: create wallet
+    W->>D: save wallet
+    M->>T: create transaction
+    T->>B: add transaction to blockchain
+    M->>B: mine block
+    B->>D: save blockchain
